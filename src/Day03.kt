@@ -25,19 +25,11 @@ fun main() {
     }
 
     fun part1(input: List<String>): Long {
-        val joltages: MutableList<Long> = mutableListOf()
-        for (bank in input) {
-            joltages.add(getJoltage(bank, 2))
-        }
-        return joltages.sum()
+        return input.sumOf { getJoltage(it, 2) }
     }
 
     fun part2(input: List<String>): Long {
-        val joltages: MutableList<Long> = mutableListOf()
-        for (bank in input) {
-            joltages.add(getJoltage(bank, 12))
-        }
-        return joltages.sum()
+        return input.sumOf { getJoltage(it, 12) }
     }
 
     check(part1(listOf("987654321111111")) == 98L)
